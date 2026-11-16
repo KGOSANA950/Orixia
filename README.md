@@ -3,7 +3,7 @@
 Orixia is a modern, high-end accommodation booking website built entirely with **Vanilla HTML, CSS, and JavaScript**. Designed with a sophisticated dark emerald and gold color palette, it delivers a premium, luxury hotel experience right in the browser. 
 
 ## 🚀 Live Demo
-👉 **[Experience the Live Orixia Platform]([INSERT_YOUR_LIVE_LINK_HERE])**
+👉 **[Experience the Live Orixia Platform]([ https://kgosana950.github.io/Orixia/])**
 
 ## ✨ Features
 
