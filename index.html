@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Orixia | Beyond Ordinary. Above Expectations.</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fa-solid fa-gem"></i> ORIXIA
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#rooms">Rooms & Suites</a></li>
+            <li><a href="#amenities">Amenities</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#" class="btn-book-nav">Book Now</a></li>
+        </ul>
+        <div class="hamburger">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Experience True Luxury</h1>
+            <p>Beyond Ordinary. Above Expectations.</p>
+            
+            <!-- Booking Widget -->
+            <div class="booking-widget">
+                <div class="input-group">
+                    <label><i class="fas fa-calendar-alt"></i> Check-in</label>
+                    <input type="date" id="checkin">
+                </div>
+                <div class="input-group">
+                    <label><i class="fas fa-calendar-alt"></i> Check-out</label>
+                    <input type="date" id="checkout">
+                </div>
+                <div class="input-group">
+                    <label><i class="fas fa-user-friends"></i> Guests</label>
+                    <select id="guests">
+                        <option value="1">1 Adult</option>
+                        <option value="2">2 Adults</option>
+                        <option value="3">2 Adults, 1 Child</option>
+                        <option value="4">Family (4)</option>
+                    </select>
+                </div>
+                <button class="btn-primary" onclick="checkAvailability()">Check Availability</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Rooms Section -->
+    <section id="rooms" class="section">
+        <div class="container">
+            <h2 class="section-title">Rooms & Suites</h2>
+            <p class="section-subtitle">Indulge in our meticulously designed rooms, crafted for your ultimate comfort.</p>
+            
+            <div class="room-grid">
+                <!-- Room 1 -->
+                <div class="room-card">
+                    <div class="room-image" style="background-image: url('https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&q=80&w=800');"></div>
+                    <div class="room-info">
+                        <h3>Executive Suite</h3>
+                        <p>King bed, city views, marble bathroom, and exclusive lounge access.</p>
+                        <div class="room-footer">
+                            <div class="price-tag">
+                                <span class="price-night">R 350 <small>/ night</small></span>
+                                <span class="price-month">R 10,450 <small>/ month</small></span>
+                            </div>
+                            <button class="btn-outline" onclick="openBookingModal('Executive Suite')">Book</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Room 2 -->
+                <div class="room-card">
+                    <div class="room-image" style="background-image: url('https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&q=80&w=800');"></div>
+                    <div class="room-info">
+                        <h3>Deluxe Room</h3>
+                        <p>Queen bed, premium amenities, and a spacious work desk.</p>
+                        <div class="room-footer">
+                            <div class="price-tag">
+                                <span class="price-night">R 350 <small>/ night</small></span>
+                                <span class="price-month">R 10,450 <small>/ month</small></span>
+                            </div>
+                            <button class="btn-outline" onclick="openBookingModal('Deluxe Room')">Book</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Room 3 -->
+                <div class="room-card">
+                    <div class="room-image" style="background-image: url('https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&q=80&w=800');"></div>
+                    <div class="room-info">
+                        <h3>Standard Room</h3>
+                        <p>Comfortable double bed, en-suite shower, and all essentials.</p>
+                        <div class="room-footer">
+                            <div class="price-tag">
+                                <span class="price-night">R 350 <small>/ night</small></span>
+                                <span class="price-month">R 10,450 <small>/ month</small></span>
+                            </div>
+                            <button class="btn-outline" onclick="openBookingModal('Standard Room')">Book</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section id="amenities" class="section bg-dark">
+        <div class="container">
+            <h2 class="section-title text-light">World-Class Amenities</h2>
+            <div class="amenities-grid">
+                <div class="amenity-item">
+                    <i class="fas fa-wifi"></i>
+                    <h4>High-Speed WiFi</h4>
+                    <p>Complimentary uncapped internet throughout the hotel.</p>
+                </div>
+                <div class="amenity-item">
+                    <i class="fas fa-swimming-pool"></i>
+                    <h4>Outdoor Pool</h4>
+                    <p>Relax by our pristine pool with poolside service.</p>
+                </div>
+                <div class="amenity-item">
+                    <i class="fas fa-utensils"></i>
+                    <h4>Fine Dining</h4>
+                    <p>Complimentary gourmet breakfast and an award-winning restaurant.</p>
+                </div>
+                <div class="amenity-item">
+                    <i class="fas fa-car"></i>
+                    <h4>Secure Parking</h4>
+                    <p>Free, secure on-site parking for all our guests.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact/Footer Section -->
+    <footer id="contact" class="footer">
+        <div class="container footer-content">
+            <div class="footer-col">
+                <h3>ORIXIA</h3>
+                <p>Beyond Ordinary. Above Expectations.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Us</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Corner of Lilian Ngoyi & Andries Streets, Pretoria</p>
+                <p><i class="fas fa-phone"></i> 067 129 9516</p>
+                <p><i class="fas fa-envelope"></i> mochinaronney099@gmail.com</p>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <p><a href="#rooms">Rooms & Suites</a></p>
+                <p><a href="#amenities">Amenities</a></p>
+                <!-- Hidden Admin Link for you to view the bookings -->
+                <p><a href="#" onclick="showBookings()" style="color: #555; font-size: 0.7rem;">View Database (Admin)</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Orixia Luxury Hotel. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Booking Modal (Hidden by default) -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeBookingModal()">&times;</span>
+            <h2>Complete Your Booking</h2>
+            <p id="modal-room-name" class="modal-room-name">Room Name</p>
+            
+            <form id="booking-form">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="book-name" required placeholder="John Doe">
+                </div>
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="book-email" required placeholder="john@example.com">
+                </div>
+                <div class="form-group">
+                    <label>Check-in Date</label>
+                    <input type="date" id="book-checkin" required>
+                </div>
+                <div class="form-group">
+                    <label>Check-out Date</label>
+                    <input type="date" id="book-checkout" required>
+                </div>
+                <button type="submit" class="btn-primary" style="width: 100%;">Confirm Booking Request</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Admin Database Modal -->
+    <div id="adminModal" class="modal">
+        <div class="modal-content" style="max-width: 800px;">
+            <span class="close-btn" onclick="document.getElementById('adminModal').style.display='none'">&times;</span>
+            <h2>Booking Database (LocalStorage)</h2>
+            <p style="margin-bottom: 20px; font-size: 0.9rem; color: #666;">This is a simulation of a database. In a real app, this data would be stored on a server.</p>
+            <table id="bookingsTable" style="width: 100%; border-collapse: collapse; text-align: left;">
+                <thead>
+                    <tr style="background: #0a1f14; color: white;">
+                        <th style="padding: 10px; border: 1px solid #ddd;">Name</th>
+                        <th style="padding: 10px; border: 1px solid #ddd;">Email</th>
+                        <th style="padding: 10px; border: 1px solid #ddd;">Room</th>
+                        <th style="padding: 10px; border: 1px solid #ddd;">Check-in</th>
+                        <th style="padding: 10px; border: 1px solid #ddd;">Check-out</th>
+                    </tr>
+                </thead>
+                <tbody id="bookingsTableBody">
+                    <!-- Data loaded via JS -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
