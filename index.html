@@ -3,238 +3,342 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orixia | Beyond Ordinary. Above Expectations.</title>
+    <title>Ronney Motšhina | Computer Systems Engineer</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+    <!-- Link to your external CSS file -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Background Grid -->
+    <div class="grid-bg"></div>
+
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="logo">
-            <i class="fa-solid fa-gem"></i> ORIXIA
-        </div>
-        <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#rooms">Rooms & Suites</a></li>
-            <li><a href="#amenities">Amenities</a></li>
-            <li><a href="#contact">Contact</a></li>
-            <li><a href="#" class="btn-book-nav">Book Now</a></li>
-        </ul>
-        <div class="hamburger">
-            <i class="fas fa-bars"></i>
+    <nav>
+        <div class="logo">// RONNEY.DEV</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+            <a href="#skills">Skills</a>
+            <a href="#certs">Certs</a>
+            <a href="#contact">Contact</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <header id="home" class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <h1>Experience True Luxury</h1>
-            <p>Beyond Ordinary. Above Expectations.</p>
-            
-            <!-- Booking Widget -->
-            <div class="booking-widget">
-                <div class="input-group">
-                    <label><i class="fas fa-calendar-alt"></i> Check-in</label>
-                    <input type="date" id="checkin">
-                </div>
-                <div class="input-group">
-                    <label><i class="fas fa-calendar-alt"></i> Check-out</label>
-                    <input type="date" id="checkout">
-                </div>
-                <div class="input-group">
-                    <label><i class="fas fa-user-friends"></i> Guests</label>
-                    <select id="guests">
-                        <option value="1">1 Adult</option>
-                        <option value="2">2 Adults</option>
-                        <option value="3">2 Adults, 1 Child</option>
-                        <option value="4">Family (4)</option>
-                    </select>
-                </div>
-                <button class="btn-primary" onclick="checkAvailability()">Check Availability</button>
+    <header class="hero">
+        <div class="hero-text">
+            <div class="status">
+                <div class="dot"></div>
+                <span>Systems check: Online</span>
+            </div>
+            <h1>Ronney Motšhina</h1>
+            <div class="role-title">Computer Systems Engineer</div>
+            <p class="bio">
+                I build complete software and hardware solutions. From interactive web applications 
+                to C++ desktop software and ESP32 robotics, I turn complex logic into working systems.
+            </p>
+            <div class="typewriter">
+                <span id="type-text"></span><span class="cursor"></span>
+            </div>
+        </div>
+        
+        <!-- 3D Visual -->
+        <div class="hero-visual">
+            <div class="cube">
+                <div class="face front">C++</div>
+                <div class="face back">C#</div>
+                <div class="face right">JS</div>
+                <div class="face left">SQL</div>
+                <div class="face top">ESP32</div>
+                <div class="face bottom">ROS</div>
             </div>
         </div>
     </header>
 
-    <!-- Rooms Section -->
-    <section id="rooms" class="section">
-        <div class="container">
-            <h2 class="section-title">Rooms & Suites</h2>
-            <p class="section-subtitle">Indulge in our meticulously designed rooms, crafted for your ultimate comfort.</p>
-            
-            <div class="room-grid">
-                <!-- Room 1 -->
-                <div class="room-card">
-                    <div class="room-image" style="background-image: url('https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&q=80&w=800');"></div>
-                    <div class="room-info">
-                        <h3>Executive Suite</h3>
-                        <p>King bed, city views, marble bathroom, and exclusive lounge access.</p>
-                        <div class="room-footer">
-                            <div class="price-tag">
-                                <span class="price-night">R 350 <small>/ night</small></span>
-                                <span class="price-month">R 10,450 <small>/ month</small></span>
-                            </div>
-                            <button class="btn-outline" onclick="openBookingModal('Executive Suite')">Book</button>
-                        </div>
-                    </div>
+    <!-- About Section -->
+    <section id="about">
+        <h2 class="section-title">01. About Me</h2>
+        <div class="info-grid">
+            <div>
+                <div class="info-item">
+                    <div class="info-label">Name</div>
+                    <div class="info-value">Ronney Motšhina</div>
                 </div>
-
-                <!-- Room 2 -->
-                <div class="room-card">
-                    <div class="room-image" style="background-image: url('https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&q=80&w=800');"></div>
-                    <div class="room-info">
-                        <h3>Deluxe Room</h3>
-                        <p>Queen bed, premium amenities, and a spacious work desk.</p>
-                        <div class="room-footer">
-                            <div class="price-tag">
-                                <span class="price-night">R 350 <small>/ night</small></span>
-                                <span class="price-month">R 10,450 <small>/ month</small></span>
-                            </div>
-                            <button class="btn-outline" onclick="openBookingModal('Deluxe Room')">Book</button>
-                        </div>
-                    </div>
+                <div class="info-item">
+                    <div class="info-label">Institution</div>
+                    <div class="info-value">Tshwane University of Technology (TUT)</div>
                 </div>
-
-                <!-- Room 3 -->
-                <div class="room-card">
-                    <div class="room-image" style="background-image: url('https://images.unsplash.com/photo-1566665797739-1674de7a421a?auto=format&fit=crop&q=80&w=800');"></div>
-                    <div class="room-info">
-                        <h3>Standard Room</h3>
-                        <p>Comfortable double bed, en-suite shower, and all essentials.</p>
-                        <div class="room-footer">
-                            <div class="price-tag">
-                                <span class="price-night">R 350 <small>/ night</small></span>
-                                <span class="price-month">R 10,450 <small>/ month</small></span>
-                            </div>
-                            <button class="btn-outline" onclick="openBookingModal('Standard Room')">Book</button>
-                        </div>
-                    </div>
+                <div class="info-item">
+                    <div class="info-label">Program</div>
+                    <div class="info-value">BEng Tech in Computer Systems Engineering</div>
+                </div>
+            </div>
+            <div>
+                <div class="info-item">
+                    <div class="info-label">Specialty</div>
+                    <div class="info-value">Software, Web & Embedded Systems</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Location</div>
+                    <div class="info-value">Pretoria, South Africa</div>
+                </div>
+                <div class="info-item">
+                    <div class="info-label">Interests</div>
+                    <div class="info-value">Full-stack dev, ESP32 robotics, AI, Linux, Hardware</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Amenities Section -->
-    <section id="amenities" class="section bg-dark">
-        <div class="container">
-            <h2 class="section-title text-light">World-Class Amenities</h2>
-            <div class="amenities-grid">
-                <div class="amenity-item">
-                    <i class="fas fa-wifi"></i>
-                    <h4>High-Speed WiFi</h4>
-                    <p>Complimentary uncapped internet throughout the hotel.</p>
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-title">02. Projects</h2>
+        <div class="project-list">
+            
+            <!-- NEW: Orixia Project (In Progress) -->
+            <a href="https://kgosana950.github.io/Orixia/" target="_blank" class="project-item" style="border-color: #d4af37;">
+                <div>
+                    <div class="project-name" style="color: #d4af37;">
+                        Orixia Luxury Hotel <span style="font-size: 0.7rem; background: rgba(212, 175, 55, 0.2); color: #d4af37; padding: 2px 8px; border-radius: 12px; margin-left: 10px; vertical-align: middle;">IN PROGRESS</span>
+                    </div>
+                    <div class="project-desc">
+                        A premium accommodation booking platform. Features a luxury UI, interactive date picker, and a simulated database using LocalStorage. Currently being upgraded to a full-stack application with a real database.
+                    </div>
                 </div>
-                <div class="amenity-item">
-                    <i class="fas fa-swimming-pool"></i>
-                    <h4>Outdoor Pool</h4>
-                    <p>Relax by our pristine pool with poolside service.</p>
+                <div class="project-link" style="color: #d4af37;">View Live ↗</div>
+            </a>
+
+            <!-- Existing Project: Troll Calculator -->
+            <a href="https://kgosana950.github.io/Calculator/" target="_blank" class="project-item">
+                <div>
+                    <div class="project-name">Troll Calculator</div>
+                    <div class="project-desc">A sleek, interactive web calculator with a simulated premium paywall. Features fake payment gateways and push notifications designed to trick the user before revealing the result.</div>
                 </div>
-                <div class="amenity-item">
-                    <i class="fas fa-utensils"></i>
-                    <h4>Fine Dining</h4>
-                    <p>Complimentary gourmet breakfast and an award-winning restaurant.</p>
+                <div class="project-link">View Project ↗</div>
+            </a>
+            
+            <!-- Existing Project: SkyCast -->
+            <a href="https://kgosana950.github.io/skycast-weather-website/" target="_blank" class="project-item">
+                <div>
+                    <div class="project-name">SkyCast Weather</div>
+                    <div class="project-desc">An immersive weather dashboard pulling real-time data. Features dynamic backgrounds, 24-hour and 7-day forecasts, and a clean, modern UI.</div>
                 </div>
-                <div class="amenity-item">
-                    <i class="fas fa-car"></i>
-                    <h4>Secure Parking</h4>
-                    <p>Free, secure on-site parking for all our guests.</p>
+                <div class="project-link">View Project ↗</div>
+            </a>
+            
+            <!-- Existing Project: HeartTrace -->
+            <a href="https://kgosana950.github.io/hearttrace-patient-portal/" target="_blank" class="project-item">
+                <div>
+                    <div class="project-name">HeartTrace Portal</div>
+                    <div class="project-desc">A web-based remote patient monitoring portal designed to track and display vital health metrics in a secure, user-friendly dashboard.</div>
                 </div>
+                <div class="project-link">View Project ↗</div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience">
+        <h2 class="section-title">03. Experience</h2>
+        <div class="exp-item">
+            <div class="exp-date">Feb 2025 – June 2025</div>
+            <div>
+                <div class="exp-title">Tshwane University of Technology</div>
+                <div class="exp-role">Volunteer Academic Tutor</div>
+                <div class="exp-desc">Assisted students in understanding complex engineering concepts, programming logic, and hardware fundamentals.</div>
+            </div>
+        </div>
+        <div class="exp-item">
+            <div class="exp-date">2024 – Present</div>
+            <div>
+                <div class="exp-title">Solo Developer & Student Projects</div>
+                <div class="exp-role">Full-Stack & Embedded Developer</div>
+                <div class="exp-desc">Designed and built a C++/CLI Banking App, an ESP32-CAM Motion Detection system, and deployed multiple live web applications including Orixia.</div>
             </div>
         </div>
     </section>
 
-    <!-- Contact/Footer Section -->
-    <footer id="contact" class="footer">
-        <div class="container footer-content">
-            <div class="footer-col">
-                <h3>ORIXIA</h3>
-                <p>Beyond Ordinary. Above Expectations.</p>
-                <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                </div>
-            </div>
-            <div class="footer-col">
-                <h3>Contact Us</h3>
-                <p><i class="fas fa-map-marker-alt"></i> Corner of Lilian Ngoyi & Andries Streets, Pretoria</p>
-                <p><i class="fas fa-phone"></i> 067 129 9516</p>
-                <p><i class="fas fa-envelope"></i> mochinaronney099@gmail.com</p>
-            </div>
-            <div class="footer-col">
-                <h3>Quick Links</h3>
-                <p><a href="#rooms">Rooms & Suites</a></p>
-                <p><a href="#amenities">Amenities</a></p>
-                <!-- Hidden Admin Link for you to view the bookings -->
-                <p><a href="#" onclick="showBookings()" style="color: #555; font-size: 0.7rem;">View Database (Admin)</a></p>
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2 class="section-title">04. Skills</h2>
+        <div style="margin-bottom: 30px;">
+            <h3 style="color: #fff; margin-bottom: 15px; font-size: 1.1rem;">Frontend Web</h3>
+            <div class="skills-container">
+                <span class="skill-tag">HTML5</span>
+                <span class="skill-tag">CSS3</span>
+                <span class="skill-tag">JavaScript (ES6+)</span>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Orixia Luxury Hotel. All Rights Reserved.</p>
+        <div style="margin-bottom: 30px;">
+            <h3 style="color: #fff; margin-bottom: 15px; font-size: 1.1rem;">Programming Languages</h3>
+            <div class="skills-container">
+                <span class="skill-tag">C++</span>
+                <span class="skill-tag">C#</span>
+                <span class="skill-tag">C</span>
+                <span class="skill-tag">Python (Basic)</span>
+                <span class="skill-tag">Java (Basic)</span>
+                <span class="skill-tag">SQL</span>
+                <span class="skill-tag">Assembly</span>
+            </div>
         </div>
-    </footer>
+        <div>
+            <h3 style="color: #fff; margin-bottom: 15px; font-size: 1.1rem;">Tools & Frameworks</h3>
+            <div class="skills-container">
+                <span class="skill-tag">Visual Studio</span>
+                <span class="skill-tag">.NET</span>
+                <span class="skill-tag">Git & GitHub</span>
+                <span class="skill-tag">Linux (Ubuntu)</span>
+                <span class="skill-tag">ROS</span>
+                <span class="skill-tag">Proteus 8</span>
+                <span class="skill-tag">Unity</span>
+            </div>
+        </div>
+    </section>
 
-    <!-- Booking Modal (Hidden by default) -->
-    <div id="bookingModal" class="modal">
-        <div class="modal-content">
-            <span class="close-btn" onclick="closeBookingModal()">&times;</span>
-            <h2>Complete Your Booking</h2>
-            <p id="modal-room-name" class="modal-room-name">Room Name</p>
-            
-            <form id="booking-form">
-                <div class="form-group">
-                    <label>Full Name</label>
-                    <input type="text" id="book-name" required placeholder="John Doe">
+    <!-- Certifications Section -->
+    <section id="certs">
+        <h2 class="section-title">05. Certifications</h2>
+        <div class="cert-grid">
+            <div class="cert-card">
+                <div>
+                    <div class="cert-icon">🛡️</div>
+                    <div class="cert-title">Introduction to Cybersecurity</div>
+                    <div class="cert-issuer">Cisco Networking Academy</div>
                 </div>
-                <div class="form-group">
-                    <label>Email Address</label>
-                    <input type="email" id="book-email" required placeholder="john@example.com">
+                <a href="Cisco_Cybersecurity.pdf" target="_blank" class="cert-link">View Certificate ↗</a>
+            </div>
+            <div class="cert-card">
+                <div>
+                    <div class="cert-icon">🌐</div>
+                    <div class="cert-title">Networking Basics</div>
+                    <div class="cert-issuer">Cisco Networking Academy</div>
                 </div>
-                <div class="form-group">
-                    <label>Check-in Date</label>
-                    <input type="date" id="book-checkin" required>
+                <a href="Cisco_Networking_Basics.pdf" target="_blank" class="cert-link">View Certificate ↗</a>
+            </div>
+            <div class="cert-card">
+                <div>
+                    <div class="cert-icon">🤖</div>
+                    <div class="cert-title">Introduction to Modern AI</div>
+                    <div class="cert-issuer">Cisco Networking Academy</div>
                 </div>
-                <div class="form-group">
-                    <label>Check-out Date</label>
-                    <input type="date" id="book-checkout" required>
+                <a href="Cisco_Modern_AI.pdf" target="_blank" class="cert-link">View Certificate ↗</a>
+            </div>
+            <div class="cert-card">
+                <div>
+                    <div class="cert-icon">💻</div>
+                    <div class="cert-title">Operating Systems Basics</div>
+                    <div class="cert-issuer">Cisco Networking Academy</div>
                 </div>
-                <button type="submit" class="btn-primary" style="width: 100%;">Confirm Booking Request</button>
-            </form>
+                <a href="Cisco_OS_Basics.pdf" target="_blank" class="cert-link">View Certificate ↗</a>
+            </div>
+            <div class="cert-card">
+                <div>
+                    <div class="cert-icon">🎮</div>
+                    <div class="cert-title">Beginner Scripting</div>
+                    <div class="cert-issuer">Unity Learn</div>
+                </div>
+                <a href="Unity_Beginner_Scripting.pdf" target="_blank" class="cert-link">View Certificate ↗</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section with Form -->
+    <section id="contact">
+        <h2 class="section-title">06. Contact</h2>
+        
+        <div class="contact-wrapper">
+            <!-- Left Side: Info -->
+            <div class="contact-info">
+                <h3>Let's build something together.</h3>
+                <p>Currently open to internship and graduate opportunities. Feel free to reach out via the form or my socials.</p>
+                
+                <div class="contact-detail">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <span>Email</span>
+                        <a href="mailto:mochinaronney099@gmail.com">mochinaronney099@gmail.com</a>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <div>
+                        <span>Location</span>
+                        <p>Pretoria, South Africa</p>
+                    </div>
+                </div>
+
+                <div class="socials">
+                    <a href="https://github.com/KGOSANA950" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/motshina-ronney-65b81a314" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
+            </div>
+
+            <!-- Right Side: Form -->
+            <div class="contact-form-container">
+                <form id="contactForm" action="https://formspree.io/f/xaeoeezk" method="POST">
+                    <input type="hidden" name="_subject" value="New Message from Portfolio Website!">
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Your Name</label>
+                            <input type="text" name="name" required placeholder="John Doe">
+                        </div>
+                        <div class="form-group">
+                            <label>Your Email</label>
+                            <input type="email" name="email" required placeholder="john@example.com">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Subject</label>
+                        <input type="text" name="subject" required placeholder="How can I help you?">
+                    </div>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea name="message" rows="5" required placeholder="Your message here..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn"><i class="fas fa-paper-plane"></i> Send Message</button>
+                    <p id="formStatus"></p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Chat Box -->
+    <button class="chat-bubble" id="chatBubble">
+        <i class="fas fa-comment-dots"></i>
+    </button>
+
+    <div class="chat-panel" id="chatPanel">
+        <div class="chat-header">
+            <div class="chat-user">
+                <i class="fas fa-robot"></i>
+                <div>
+                    <h4>Ronney's Bot</h4>
+                    <span>Online</span>
+                </div>
+            </div>
+            <button id="closeChat"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="chat-body" id="chatBody">
+            <div class="message bot">Hi there! 👋 I am Ronney's assistant. How can I help you today?</div>
+        </div>
+        <div class="chat-footer">
+            <input type="text" id="chatInput" placeholder="Type a message...">
+            <button id="sendChat"><i class="fas fa-paper-plane"></i></button>
         </div>
     </div>
 
-    <!-- Admin Database Modal -->
-    <div id="adminModal" class="modal">
-        <div class="modal-content" style="max-width: 800px;">
-            <span class="close-btn" onclick="document.getElementById('adminModal').style.display='none'">&times;</span>
-            <h2>Booking Database (LocalStorage)</h2>
-            <p style="margin-bottom: 20px; font-size: 0.9rem; color: #666;">This is a simulation of a database. In a real app, this data would be stored on a server.</p>
-            <table id="bookingsTable" style="width: 100%; border-collapse: collapse; text-align: left;">
-                <thead>
-                    <tr style="background: #0a1f14; color: white;">
-                        <th style="padding: 10px; border: 1px solid #ddd;">Name</th>
-                        <th style="padding: 10px; border: 1px solid #ddd;">Email</th>
-                        <th style="padding: 10px; border: 1px solid #ddd;">Room</th>
-                        <th style="padding: 10px; border: 1px solid #ddd;">Check-in</th>
-                        <th style="padding: 10px; border: 1px solid #ddd;">Check-out</th>
-                    </tr>
-                </thead>
-                <tbody id="bookingsTableBody">
-                    <!-- Data loaded via JS -->
-                </tbody>
-            </table>
-        </div>
-    </div>
-
+    <!-- Link to your external JavaScript file -->
     <script src="script.js"></script>
 </body>
 </html>
